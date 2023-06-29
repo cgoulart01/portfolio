@@ -8,7 +8,7 @@ export const HeaderContainer = styled.header`
   color: ${(props) => props.theme.colors.primary};
   width: 100vw;
   height: 115px;
-  background-color: transparent;
+  background-color: ${(props) => props.theme.colors.background};
 `;
 
 export const Logo = styled.div`
@@ -35,5 +35,6 @@ export const Nav = styled.div`
   }
   svg {
     font-size: 42px;
+    cursor: pointer;
   }
 `;
