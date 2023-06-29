@@ -1,4 +1,3 @@
-"use client";
 import DefaultProvider from "@/components/DefaultProvider/DefaultProvider";
 import "./globals.css";
 import { Rubik } from "next/font/google";
@@ -24,7 +23,7 @@ export default function RootLayout({
       <body className={rubik.className}>
         <DefaultProvider>
           <Header />
-          
+
           {children}
         </DefaultProvider>
       </body>

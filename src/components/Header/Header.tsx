@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+"use client";
 import * as S from "./Header.style";
 import { Big_Shoulders_Display } from "next/font/google";
 import { BsSun } from "react-icons/bs";
