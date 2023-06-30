@@ -30,7 +30,6 @@ const Header = ({}: HeaderProps) => {
         </div>
       </header>
       <Outlet />
-      <footer>Caio vitor</footer>
     </>
   );
 };
