@@ -1,38 +1,37 @@
-"use client";
-import * as S from "./Header.style";
-import { Big_Shoulders_Display } from "next/font/google";
-import { BsSun } from "react-icons/bs";
-import Link from "next/link";
-const bigShouldersDisplay = Big_Shoulders_Display({
-  weight: "800",
-  subsets: ["latin"],
-});
-
+import { NavLink, Outlet } from "react-router-dom";
+import { HiOutlineSun } from "react-icons/hi2";
 interface HeaderProps {}
 
 const Header = ({}: HeaderProps) => {
   return (
-    <S.HeaderContainer>
-      <S.Logo>
-        <h1 style={bigShouldersDisplay.style}>Caio Vitor Goulart</h1>
-        <h3>Desenvolvedor Front-end</h3>
-      </S.Logo>
-      <S.Nav>
-        <S.Menu>
-          <li>
-            <Link href="#">Sobre</Link>
-          </li>
-          <li>
-            <Link href="#">Portfolio</Link>
-          </li>
-          <li>
-            {" "}
-            <Link href="#">Contatos</Link>
-          </li>
-        </S.Menu>
-        <BsSun />
-      </S.Nav>
-    </S.HeaderContainer>
+    <>
+      <header className="flex justify-between px-16 pt-5">
+        <div>
+          <h1 className="font-bsd text-5xl  text-purple1">
+            Caio Vitor Goulart
+          </h1>
+          <h3 className="text-purple1 text-[25.5px]">
+            Desenvolvedor Frond-end
+          </h3>
+        </div>
+        <div className="flex gap-10 items-center text-purple1">
+          <ul className="flex gap-10">
+            <li>
+              <NavLink to={"/"}>Sobre</NavLink>
+            </li>
+            <li>
+              <NavLink to={"portfolio"}>Portfolio</NavLink>
+            </li>
+            <li>
+              <NavLink to={"contacts"}>Contatos</NavLink>
+            </li>
+          </ul>
+          <HiOutlineSun className=" cursor-pointer" size="2.625rem" />
+        </div>
+      </header>
+      <Outlet />
+      <footer>Caio vitor</footer>
+    </>
   );
 };
 
