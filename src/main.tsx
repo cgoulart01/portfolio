@@ -3,6 +3,8 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Header from "./components/Header/Header";
+import Portfolio from "./components/Portfolio/Portfolio";
+import { MenuContextProvider } from "./context/MenuContext";
 
 export const router = createBrowserRouter([
   {
@@ -11,7 +13,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "portfolio",
-        element: <h1>teste</h1>,
+        element: <Portfolio />,
       },
       {
         path: "contacts",
@@ -27,6 +29,8 @@ export const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <MenuContextProvider>
+      <RouterProvider router={router} />
+    </MenuContextProvider>
   </React.StrictMode>
 );

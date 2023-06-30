@@ -4,7 +4,9 @@ export default {
     "index.html",
     "./src/**/*.{js,ts,jsx,tsx}"
   ],
+  darkMode:"class",
   theme: {
+    
     extend: {
      colors:{
      "purple1":"#674F99",
